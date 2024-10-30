@@ -7,11 +7,13 @@ import 'app/routes/app_pages.dart';
 
 void main() async {
   await GetStorage.init();
+
   runApp(
     GetMaterialApp(
       title: "Application",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      routes: {},
       debugShowCheckedModeBanner: false,
     ),
   );

@@ -12,7 +12,9 @@ abstract class Routes {
   static const FAVOURITE = _Paths.FAVOURITE;
 }
 
+
 abstract class _Paths {
+
   _Paths._();
   static const OnBoarding = '/onboarding';
   static const LOGIN = '/login';

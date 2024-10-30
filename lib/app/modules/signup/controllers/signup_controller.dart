@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class SignupController extends GetxController {
   GlobalKey<FormState> formKeysignup = GlobalKey<FormState>();
@@ -8,7 +9,7 @@ class SignupController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmpasswordController = TextEditingController();
-
+  final storage = GetStorage();
   bool isPasswordVisible = false;
 
   // Name validator
@@ -61,6 +62,7 @@ class SignupController extends GetxController {
     if (formKeysignup.currentState?.validate() ?? false) {
       SnackBar(content: Text('Sign up successful!'));
       Get.toNamed('/bottomnav');
+      storage.write('signupcompleted', true);
     }
   }
 

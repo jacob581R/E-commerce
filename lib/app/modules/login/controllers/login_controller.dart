@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class LoginController extends GetxController {
   //TODO: Implement LoginController
 
-  final count = 0.obs;
 
-  void increment() => count.value++;
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool isPasswordVisible = false;
-
+  final storage = GetStorage();
   // Email Validator
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
@@ -47,7 +46,8 @@ class LoginController extends GetxController {
   void submitForm() {
     if (formKey.currentState?.validate() ?? false) {
       SnackBar(content: Text('Login successful!'));
-      Get.toNamed('/bottomnav');
+      Get.offAllNamed('/bottomnav');
+      storage.write('logincompleted', true);
     } else {
       update(["form_update"]);
     }

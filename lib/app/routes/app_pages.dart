@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../modules/Home/bindings/home_binding.dart';
 import '../modules/Home/views/home_view.dart';
@@ -17,10 +18,15 @@ import '../modules/signup/views/signup_view.dart';
 
 part 'app_routes.dart';
 
+final storage = GetStorage();
+bool onbardingcompleted = storage.read('onboardingCompleted') ?? false;
+bool logincompleted = storage.read('logincompleted') ?? false;
+bool signupcompleted = storage.read('signupcompleted') ?? false;
+
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.OnBoarding;
+  static var INITIAL = onbardingcompleted ? Routes.LOGIN : Routes.OnBoarding;
 
   static final routes = [
     GetPage(
@@ -30,12 +36,12 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () => const LoginView(),
+      page: () => !logincompleted ? const LoginView() : const BottomnavView(),
       binding: LoginBinding(),
     ),
     GetPage(
       name: _Paths.SIGNUP,
-      page: () => const SignupView(),
+      page: () => !signupcompleted ? const SignupView() : const BottomnavView(),
       binding: SignupBinding(),
     ),
     GetPage(
