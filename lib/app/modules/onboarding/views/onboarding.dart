@@ -5,15 +5,10 @@ import 'package:get/get.dart';
 import '../controllers/onboarding_controller.dart';
 
 class OnBoarding extends GetView<OnBoardingController> {
-  @override
-  // TODO: implement controller
-
   const OnBoarding({super.key});
   @override
   Widget build(BuildContext context) {
     // read the flage of onboarding grom the storage
-    bool onboardingCompleted =
-        controller.storage.read("onboardingCompleted") ?? false;
 
     // check the onboarding screen flage
 

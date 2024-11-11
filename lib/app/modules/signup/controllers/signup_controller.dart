@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -51,7 +50,7 @@ class SignupController extends GetxController {
   }
 
   String? validateconfirmpassword(String? value) {
-    if (confirmpasswordController.text != passwordController) {
+    if (confirmpasswordController.text != passwordController.text) {
       return 'password does not match';
     } else {
       return null;
@@ -68,7 +67,7 @@ class SignupController extends GetxController {
 
   //TODO: Implement SignupController
   void onclicklogin() {
-    Get.toNamed('/login');
+    Get.back();
   }
 
   final count = 0.obs;

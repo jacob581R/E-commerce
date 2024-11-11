@@ -10,11 +10,10 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const SEARCH = _Paths.SEARCH;
   static const FAVOURITE = _Paths.FAVOURITE;
+  static const CART = _Paths.CART;
 }
 
-
 abstract class _Paths {
-
   _Paths._();
   static const OnBoarding = '/onboarding';
   static const LOGIN = '/login';
@@ -23,4 +22,5 @@ abstract class _Paths {
   static const HOME = '/home';
   static const SEARCH = '/search';
   static const FAVOURITE = '/favourite';
+  static const CART = '/cart';
 }
