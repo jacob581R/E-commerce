@@ -74,6 +74,7 @@ flutter:
     - assets/images/heart-icon.svg
     - assets/images/add-item-in-cart-icon.svg
     - assets/images/house-icon.svg
+    - assets/images/close-circle-svgrepo-com.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
