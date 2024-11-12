@@ -11,7 +11,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff5b0b0b).withOpacity(0.75),
+      backgroundColor: Color(0xffFFFFFF).withOpacity(0.75),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 48),
         child: GridView.builder(
@@ -42,14 +42,14 @@ class HomeView extends GetView<HomeController> {
                           Text(
                             "product name",
                             style: TextStyle(
-                                fontSize: 12, color: Color(0xffFFFFFF)),
+                                fontSize: 12, color: Color(0xffFFFFFF).withOpacity(0.8)),
                           ),
                           Text(
                             "Price",
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
-                                color: Color(0xffFFFFFF)),
+                                color: Color(0xffFFFFFF).withOpacity(0.8)),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,8 +60,10 @@ class HomeView extends GetView<HomeController> {
                                   'assets/images/add-to-wishlist-icon.svg',
                                   height: 20,
                                   width: 20,
+                                  colorFilter: ColorFilter.mode(Color(0xffFFFFFF), BlendMode.srcIn),
                                 ),
-                                color: Color(0xffFFFFFF),
+                                
+
                               ),
                               IconButton(
                                 onPressed: () {},
@@ -69,7 +71,9 @@ class HomeView extends GetView<HomeController> {
                                   'assets/images/add-item-in-cart-icon.svg',
                                   height: 20,
                                   width: 20,
+                                  colorFilter: ColorFilter.mode(Color(0xffFFFFFF), BlendMode.srcIn),
                                 ),
+                                 
                               )
                             ],
                           )

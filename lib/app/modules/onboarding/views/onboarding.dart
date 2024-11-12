@@ -8,35 +8,34 @@ class OnBoarding extends GetView<OnBoardingController> {
   const OnBoarding({super.key});
   @override
   Widget build(BuildContext context) {
-    // read the flage of onboarding grom the storage
-
-    // check the onboarding screen flage
-
     return Scaffold(
       body: Stack(
         children: [
-          PageView(
-            children: [
-              SizedBox(
-                child: Image.asset(
-                  'assets/images/intro3.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
-              SizedBox(
-                child: Image.asset(
-                  'assets/images/intro2.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
-              SizedBox(
-                child: Image.asset(
-                  'assets/images/intro1.jpg',
-                  fit: BoxFit.cover,
-                ),
-              )
-            ],
-          ),
+          GetBuilder(
+              builder: (OnBoardingController controller) => PageView(
+                    controller: controller.controllerpage,
+                    onPageChanged: controller.onPageChanged,
+                    children: [
+                      SizedBox(
+                        child: Image.asset(
+                          'assets/images/intro3.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(
+                        child: Image.asset(
+                          'assets/images/intro2.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(
+                        child: Image.asset(
+                          'assets/images/intro1.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    ],
+                  )),
           Container(
             margin: const EdgeInsets.fromLTRB(158, 695, 0, 0),
             width: 74,
@@ -57,3 +56,4 @@ class OnBoarding extends GetView<OnBoardingController> {
     );
   }
 }
+

@@ -131,7 +131,7 @@ class SignupView extends GetView<SignupController> {
                         decoration: const BoxDecoration(
                             color: Color(0xff790000),
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(15))),
+                                 BorderRadius.all(Radius.circular(15))),
                         child: TextButton(
                             onPressed: controller.submitForm,
                             child: const Text(

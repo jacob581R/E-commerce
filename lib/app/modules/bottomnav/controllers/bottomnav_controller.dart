@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:task7/app/modules/cart/views/cart_view.dart';
 import '../../Home/views/home_view.dart';
@@ -34,20 +33,5 @@ class BottomnavController extends GetxController {
       default:
         return HomeView();
     }
-  }
-
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 }
